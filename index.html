@@ -1,1 +1,86 @@
-
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои гайды</title>
+    <style>
+        body { 
+            font-family: Arial; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 20px;
+        }
+        .tab { 
+            display: inline-block; 
+            padding: 10px 20px; 
+            cursor: pointer; 
+            background: #f0f0f0;
+            margin-right: 5px;
+        }
+        .tab.active { 
+            background: #007bff; 
+            color: white; 
+        }
+        .content { 
+            display: none; 
+            padding: 20px; 
+            border: 1px solid #ddd; 
+        }
+        .content.active { 
+            display: block; 
+        }
+        .disclaimer {
+            background: #fff3cd;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Мои гайды</h1>
+    
+    <div class="tabs">
+        <div class="tab active" onclick="showTab('guide1')">Гайд 1</div>
+        <div class="tab" onclick="showTab('guide2')">Гайд 2</div>
+        <div class="tab" onclick="showTab('guide3')">Гайд 3</div>
+    </div>
+    
+    <div id="guide1" class="content active">
+        <h2>Гайд по Minecraft</h2>
+        <p>Текст гайда...</p>
+    </div>
+    
+    <div id="guide2" class="content">
+        <h2>Гайд по Windows</h2>
+        <p>Текст гайда...</p>
+    </div>
+    
+    <div id="guide3" class="content">
+        <h2>Гайд по Photoshop</h2>
+        <p>Текст гайда...</p>
+    </div>
+    
+    <div class="disclaimer">
+        <p>© 2024 Мои Гайды. Вся информация предоставлена в образовательных целях.</p>
+        <p>Используя сайт, вы соглашаетесь с отказом от ответственности.</p>
+    </div>
+    
+    <script>
+        function showTab(tabId) {
+            // Скрыть все вкладки
+            document.querySelectorAll('.content').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelectorAll('.tab').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Показать выбранную
+            document.getElementById(tabId).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
